@@ -1,0 +1,25 @@
+#scripts
+initServer.js
+
+# dependencies
+/node_modules
+
+# Node
+package-lock.json
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
+
+#IDE
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace

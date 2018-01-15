@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Players list</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="bg">
+        <h1 style="padding-top: 20px;">Players Top 10</h1>
+        <div class="black-box-player-list">
+            <ul class="players-list">
+                <% for(let x = 0; x < list.length; x++) { %>
+                <li <% if (id & id === list[x].id) { %> class="selected-id" <% } %> ><div class="position"><%= x+1 %></div><div class="name"><%= list[x].name %></div><div class="points"><%= list[x].points %></div></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/bg.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+@import 'fonts';
+
+$font-stack: 'Roboto Condensed', sans-serif;
+$color-gone: cadetblue;
+$color-gtwo: #2A4FB1;
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(30deg, $color-gone, $color-gtwo);
+    text-align: center;
+}
+
+.box-canvas {
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding-top: 40px;
+}
+
+canvas {
+    margin: auto;
+    border: 1px solid $color-gone;
+}
+
+#display {
+    background: linear-gradient(30deg, $color-gone, $color-gtwo);
+    margin: auto;
+    width: 260px;
+    height: 50px;
+    vertical-align: middle;
+    text-align: left;
+    color: white;
+    font-family: $font-stack;
+    font-weight: 300;
+    border-left: 1px solid $color-gone;
+    border-top: 1px solid $color-gone;
+    border-right: 1px solid $color-gone;
+}
+
+#lines {
+    position: relative;
+    top: 16px;
+    left: 10px;
+    width: 300px;
+    height: 10px;
+}
+
+#next-piece {
+    float: right;
+    margin-right: 5px;
+}
+
+#start-game {
+    position: absolute;
+    top: calc(30%);
+    left: calc(50% - 106px);
+    border-radius: 100%;
+    background: linear-gradient(30deg, $color-gone, $color-gtwo);
+    border: 6px solid #fff;
+    text-align: center;
+    font-family: $font-stack;
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    vertical-align: middle;
+    padding-top: 50px;
+    width: 200px;
+    height: 80px;
+    display: block;
+    cursor: pointer;
+}
+
+h1 {
+    font-family: $font-stack;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.box {
+    position: relative;
+    height: 300px;
+    width: 600px;
+    top: calc(50% - 150px);
+    left: calc(50% - 300px);
+    text-align: center;
+}
+
+.black-box {
+    background-color: black;
+    margin-top: 10px;
+    padding: 30px;
+    max-width: 800px;
+}
+
+#name {
+    background-color: black;
+    color: white;
+    font-family: $font-stack;
+    font-weight: 300;
+    font-size: 24px;
+    padding: 3px;
+    border: 0;
+    width: 270px;
+    
+    :focus {
+        border: 0;
+    }
+}
+
+.form-block {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+}
+
+.n-lines {
+    font-family: $font-stack;
+    font-size: 24px;
+    color: white;
+}
+
+.alert {
+    position: absolute;
+    top: -10px;
+    display: none;
+    color: red;
+    font-family: $font-stack;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.players-list {
+    color: white;
+    font-family: $font-stack;
+    font-weight: 300;
+    font-size: 24px;
+    list-style: none;
+    
+    li {
+        padding: 10px;
+        
+        div {
+            display: inline-block;
+        }
+        
+        .position {
+            width: 50px;
+            text-align: left;
+        }
+
+        .name {
+            width: 240px;
+            text-align: left;
+        }
+
+        .points {
+            width: 100px;
+            text-align: right;
+        }
+    }
+    
+    li.selected-id {
+        font-weight: 700;
+    }
+
+}
+
+.black-box-player-list {
+    margin: auto;
+    background-color: black;
+    margin-top: 10px;
+    padding: 30px;
+    max-width: 600px;
+}
+
+#submit {
+    background-color: white;
+    @include border-radius(5px);
+    border: 0;
+    width: 100px;
+    height: 40px;
+    font-family: $font-stack;
+    font-weight: 300;
+    font-size: 24px;
+}

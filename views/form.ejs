@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert name</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="bg">
+    <div class="box">
+        <h1>Insert your name</h1>
+        <div class="black-box">
+            <form id="submit-name" action="/insert-name" method="post">
+                <div class="form-block">
+                    <div class="alert"></div>
+                    <input type="text" name="name" id="name" maxlength="50">
+                </div>
+                <div class="form-block n-lines"></div>
+                <div class="form-block">
+                    <input type="submit" id="submit" value="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="js/bg.js"></script>
+    <script>
+    (function() {
+        const nlinesTxt = document.querySelector('.n-lines');
+        nlinesTxt.innerHTML = `<%= points %> lines`;
+
+        document.getElementById('name').focus();
+
+        const form = document.querySelector('#submit-name');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const regExpName = /[a-zA-Z_.1-9]/;
+            const name = document.querySelector('#name');
+            if (name.value.match(regExpName) && name.value !== '') {
+                const formData = `name=${name.value}`;
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.status === 200) {
+                        window.location.href = '/players-list';
+                    } else {
+                        console.log('error inserting data into the database');
+                    }
+                };
+                xhr.open(form.getAttribute('method'), form.getAttribute('action'));
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.send(formData);
+            } else {
+                const alert = document.querySelector('.alert');
+                if (!name.value.match(regExpName)) {
+                    alert.innerHTML = 'only letters, numbers, dots and underscores are allow';
+                }
+                if (name.value === '') {
+                    alert.innerHTML = 'only letters, numbers, dots and underscores are allow';
+                }
+                alert.style.display = 'inline';
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

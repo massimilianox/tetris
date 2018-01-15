@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tetris</title>
+<link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="bg">
+    <div class="box-canvas">
+        <div id="display"><span id="lines"></span><img id="next-piece" src="img/place-holder.png" width="50" height="50" alt="Next Piece" /></div>
+        <div id="start-game">Start the game</div>
+        <canvas></canvas>
+    </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/bundle.js"></script>
+    <!--script type="text/javascript" src="js/initGame.min.js"></script-->
+    <script type="text/javascript" src="js/bg.js"></script>
+</body>
+</html>
