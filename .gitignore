@@ -1,4 +1,4 @@
-#scripts
+# scripts
 initServer.js
 
 # dependencies
@@ -15,7 +15,7 @@ package-lock.json
 .DS_Store
 Thumbs.db
 
-#IDE
+# IDE
 /.idea
 .project
 .classpath
