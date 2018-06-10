@@ -216,7 +216,7 @@ export const Piece = (function() {
                             this.ub.dm.gameOver = true;
                             const self = this;
                             const button = this.bs;
-                            const socket = io.connect('http://localhost:8098');
+                            const socket = io.connect('http://localhost:1818');
                             socket.on('lower-point', function(data) {
                                 if (self.ub.dm.points >= data) {
                                     const xhr = new XMLHttpRequest();
